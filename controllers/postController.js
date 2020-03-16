@@ -13,3 +13,13 @@ exports.create = function (req, res) {
             res.send(errors)
         })
 }
+
+exports.viewSingle = async function(req, res) {
+    try {
+        let post  = await Post.findSingleById(req.params.id)
+        await res.render('single-post-screen', {post})
+    }
+    catch {
+        res.send('404 template will go here')
+    }
+}
