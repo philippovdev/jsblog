@@ -46,7 +46,7 @@ Post.prototype.create = function() {
     })
 }
 
-Post.prototype.findSingleById = function(id) {
+Post.findSingleById = function(id) {
     return new Promise(async (resolve, reject) => {
         if (typeof(id) !== 'string' || !ObjectID.isValid(id)) {
             reject()
