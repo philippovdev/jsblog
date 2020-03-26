@@ -3,6 +3,10 @@ body, .tooltip
   font-family: 'Open Sans', sans-serif;
 }
 
+img {
+  max-width: 100%;
+}
+
 .header-bar {
   background-color: #292929;
 }
