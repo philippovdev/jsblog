@@ -23,11 +23,12 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-session": "^1.16.1",
-    "marked": "^0.6.3",
+    "marked": "^0.8.2",
     "md5": "^2.2.1",
     "mongodb": "^3.2.6",
     "nodemon": "^1.19.0",
     "sanitize-html": "^1.20.1",
+    "socket.io": "^2.3.0",
     "validator": "^11.0.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"

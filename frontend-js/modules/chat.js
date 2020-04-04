@@ -24,7 +24,7 @@ export default class Chat {
     }
 
     openConnection () {
-        alert('I SWITCHED ON')
+        this.socket = io()
     }
 
     hideChat () {

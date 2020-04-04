@@ -23,7 +23,7 @@ app.use(function (req, res, next) {
         return sanitizeHTML(markdown(content), {
             allowedTags: ['p', 'span', 'img', 'strike', 'br', 'ul', 'ol', 'li', 'strong', 'bold', 'i', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
             allowedAttributes: {
-                img: [ 'src' ]
+                img: ['src']
             }
         })
     }
@@ -55,4 +55,12 @@ app.set('view engine', 'ejs')
 
 app.use('/', router)
 
-module.exports = app
+const server = require('http').createServer(app)
+
+const io = require('socket.io')(server)
+
+io.on('connection', function () {
+    console.log('A new user connected!!!')
+})
+
+module.exports = server
