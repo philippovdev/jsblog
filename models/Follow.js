@@ -9,7 +9,9 @@ let Follow = function (followedUsername, authorId) {
 }
 
 Follow.prototype.cleanUp = async function () {
-    if (typeof (this.followedUsername) !== 'string') {this.followedUsername = ''}
+    if (typeof (this.followedUsername) !== 'string') {
+        this.followedUsername = ''
+    }
 }
 
 Follow.prototype.validate = async function () {
@@ -33,6 +35,15 @@ Follow.prototype.create = function () {
             reject(this.errors)
         }
     })
+}
+
+Follow.isVisitorFollowing = async function (followedId, visitorId) {
+    let followDoc = await followsCollection.findOne({followedId: followedId, authorId: new ObjectID(visitorId)})
+    if (followDoc) {
+        return true
+    } else {
+        return false
+    }
 }
 
 module.exports = Follow
